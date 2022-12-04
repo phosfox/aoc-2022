@@ -9,7 +9,6 @@
 (def input (slurp "resources/day01.txt"))
 
 
-
 (defn part-1 [input]
   (->> (str/split input #"\n\n")
        (map str/split-lines)
@@ -17,7 +16,9 @@
        (map #(reduce + %))
        (apply max)))
 
-(part-1 input)
+(time
+ (dotimes [_ 10000]
+   (part-1 input)))
 
 
 (defn part-2 [input]
