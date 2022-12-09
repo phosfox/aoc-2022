@@ -16,11 +16,6 @@
        (map #(reduce + %))
        (apply max)))
 
-(time
- (dotimes [_ 10000]
-   (part-1 input)))
-
-
 (defn part-2 [input]
   (->> (str/split input #"\n\n")
        (map str/split-lines)
@@ -30,4 +25,5 @@
        (take 3)
        (reduce +)))
 
+(part-1 input)
 (part-2 input)
